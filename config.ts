@@ -1,0 +1,6 @@
+ export const config= {
+    baseUrl:"https://www.saucedemo.com/",
+    userName:"standard_user",
+    password:"secret_sauce",
+    defaultTimeout:5000
+}

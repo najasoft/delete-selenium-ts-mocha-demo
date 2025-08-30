@@ -1,0 +1,31 @@
+{
+  "name": "delete-selenium-ts-mocha-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -r ts-node/register tests/**/*.test.ts --timeout 60000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najasoft/delete-selenium-ts-mocha-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/najasoft/delete-selenium-ts-mocha-demo/issues"
+  },
+  "homepage": "https://github.com/najasoft/delete-selenium-ts-mocha-demo#readme",
+  "devDependencies": {
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "@types/selenium-webdriver": "^4.1.28",
+    "chai": "^6.0.1",
+    "chromedriver": "^139.0.3",
+    "mocha": "^11.7.1",
+    "selenium-webdriver": "^4.35.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
