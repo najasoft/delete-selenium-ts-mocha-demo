@@ -25,4 +25,12 @@ public async click (locator:By):Promise<void>{
     await this.browser.click(locator);
 }
 
+public async getTitle():Promise<string>{
+    const title=await this.browser.getTitle();
+    return title;
+}
+public async getCurrentUrl():Promise<string>{
+return await this.browser.getUrl();
+}
+
 }
