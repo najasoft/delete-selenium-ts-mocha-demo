@@ -13,6 +13,12 @@ describe("Test 01", () => {
     loginPage = new LoginPage(browser);
     inventoryPage = new InventoryPage(browser);
   });
+  afterEach(async function () {
+    if (this.currentTest && this.currentTest.state === "failed") {
+      await browser.takeScreenshot();
+    }
+  });
+
   after(async () => {
     await browser.quit();
   });
@@ -27,6 +33,7 @@ describe("Test 01", () => {
     expect(title, ` ${expectedTitle} is expected, but got ${title}`).equal(
       expectedTitle
     );
+    browser.takeScreenshot("inve");
   });
   it("step 3 : current URL", async () => {
     const url = await inventoryPage.getCurrentUrl();
@@ -35,8 +42,15 @@ describe("Test 01", () => {
   it("step 4: add products to cart", async () => {
     await inventoryPage.addFirstProductToCart();
   });
-    it("step 5: Verify cart items count", async () => {
-        const cartCount: number = await inventoryPage.getCartItems();
-        expect(cartCount, `One item in cart is expected, but got ${cartCount}`).equals(1);
-    });
+  it("step 5: Verify cart items count", async () => {
+    const cartCount: number = await inventoryPage.getCartItems();
+    expect(
+      cartCount,
+      `One item in cart is expected, but got ${cartCount}`
+    ).equals(1);
+  });
+  it("step 6", async () => {
+    const logoutIsVisible = inventoryPage.logoutIsdisplayed();
+    expect(logoutIsVisible, `Logout is not visible`).true;
+  });
 });
